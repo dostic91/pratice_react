@@ -8,9 +8,9 @@ import "../index.css"
 const Navbar = () => {
     const [click, setClick] = useState(false)
 
-    const handleClick = () => {
-        setClick(!click)
-    }
+    const handleClick = () => setClick(!click)
+    const closeMenu = () => setClick(false)
+
 
     return (
         <div className="header">
@@ -23,16 +23,13 @@ const Navbar = () => {
                 </div>
                 <ul className={click ? "nav-menu active" : "nav-menu"}>
                     <li className="nav-item">
-                        <a href="/">Home</a>
+                        <a href="/" onClick={closeMenu}>Home</a>
                     </li>
                     <li className="nav-item">
-                        <a href="/">About</a>
+                        <a href="#test" onClick={closeMenu}>Testimonials</a>
                     </li>
                     <li className="nav-item">
-                        <a href="/">Testimonials</a>
-                    </li>
-                    <li className="nav-item">
-                        <a href="/">Demo</a>
+                        <a href="#demo" onClick={closeMenu}>Demo</a>
                     </li>
                 </ul>
             </nav>
